@@ -1,0 +1,28 @@
+@mixin font-face($fontFamily, $path, $fileName, $svgLabel, $fontWeight: normal, $fontStyle: normal) {
+	@font-face {
+		font-family: $fontFamily;
+
+		src: url('#{$path + $fileName}.eot');
+		src: url('#{$path + $fileName}.eot?#iefix') format('embedded-opentype'),
+		url('#{$path + $fileName}.woff') format('woff'),
+		url('#{$path + $fileName}.ttf') format('truetype'),
+		url('#{$path + $fileName}.svg##{$svgLabel}') format('svg');
+
+		font-weight: $fontWeight;
+		font-style: $fontStyle;
+	}
+}
+
+// Bebas Neue
+$bn-b:   'Bebas Neue Bold';
+
+@include font-face($bn-b,   'fonts/bebas-neue/', 'BebasNeueBold', 'BebasNeueBold');
+
+// Roboto Slab
+$rsl-r:  'RobotoSlab';
+$rsl-l:  'RobotoSlab Light';
+$rsl-li: 'RobotoSlab Light Italic';
+ 
+@include font-face($rsl-r,  'fonts/roboto-slab/', 'RobotoSlab-Regular', 'RobotoSlab-Regular');
+@include font-face($rsl-l,  'fonts/roboto-slab/', 'RobotoSlab-Light', 'RobotoSlab-Light');
+@include font-face($rsl-li, 'fonts/roboto-slab/', 'RobotoSlab-LightItalic', 'RobotoSlab-LightItalic');

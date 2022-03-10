@@ -1,0 +1,48 @@
+/*!
+
+Theme Name: doggydog.blog
+Theme URI: http://doggydog.blog/
+Author: Alexander [skreets] Zharikov
+Author URI: http://zharikov.design/
+Description: Блог о квадрокоптерах.
+Requires at least: WordPress 5.2.3
+Version: 1.0.0
+Text Domain: doggydog.blog
+Tags: записи, страници
+
+*/
+
+// Variables
+@import 'variables/color';
+@import 'variables/block';
+
+// Mixin 
+@import 'mixin/fonts';
+@import 'mixin/css3';
+@import 'mixin/gradient';
+@import 'mixin/respond';
+
+// Plugin
+@import 'plugins/lightgallery';
+
+// Wordpress
+@import 'wp/block';
+@import 'wp/comments';
+@import 'wp/search';
+
+// Animation
+@import 'animation/pulse';
+@import 'animation/arrow';
+
+
+// Layout
+@import 'layout/reset';
+@import 'layout/base';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/paginator';
+
+// Main page
+@import 'page/main';
+@import 'page/page';
+@import 'page/error';

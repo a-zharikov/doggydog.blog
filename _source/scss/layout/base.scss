@@ -1,0 +1,106 @@
+// Basic Styles
+* {
+  outline: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background: $white;
+  font-family: $rsl-r;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+::selection {
+  color: $white;
+  background: $black;
+}
+::-moz-selection {
+  color: $white;
+  background: $black;
+}
+::-webkit-selection {
+  color: $white;
+  background: $black;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight: inherit;}
+
+em, i {font-family: $rsl-li;}
+strong, b {font-family: $rsl-r;}
+strong em, em strong, b i, i b {
+  font-family: $rsl-li;
+  font-weight: bolder;
+}
+
+// Links
+a {
+  color: $black;
+  outline: 0;
+  text-decoration: none;
+  @include transition;
+
+  &[href^="http://savefrom.net/"] {display: none !important;}
+
+  &.closed {
+    width: 30px;
+    height: 30px;
+    color: $gray-light;
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      width: 56px;
+      height: 1px;
+      display: block;
+      position: absolute;
+      top: 20px; left: -8px;
+      background: $gray-light;
+      @include transition;
+      @include transform(rotate(45deg));
+    }
+
+    &:after {
+      content: '';
+      width: 56px;
+      height: 1px;
+      display: block;
+      position: absolute;
+      top: 10px; left: -8px;
+      background: $gray-light;
+      @include transition;
+      @include transform(rotate(-45deg));
+    }
+
+    @include respond-to(hover) {
+
+      &:hover {
+
+        &:before, &:after {
+          background: $black;
+        }
+      }
+    }
+  }
+}
+
+// Container
+.container {
+  @include respond;
+  margin: 0 auto;
+  position: relative;
+}

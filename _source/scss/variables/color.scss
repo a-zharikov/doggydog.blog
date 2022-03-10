@@ -1,0 +1,34 @@
+$blue:       #40b4ea;
+$blue-light: #9adfff;
+
+$red:        #e92828;
+
+$gray-white: #f8f8f8;
+$gray-light: #ccc;
+$grays:      #e6e6e6;
+$gray:       #999999;
+$gray-black: #666666;
+
+$white:      #ffffff;
+$black:      #333333;
+$dark:       #000000;
+$tr:           transparent;
+
+$vk: #4a76a8;
+$fb: #4267b2;
+$tl: #25a4e2;
+$wa: #88bb4b;
+$yt: #ab231c;
+$in: #551a8b;
+
+@mixin rgba-bg($property, $background: transparent, $opacity: 1) {
+	#{$property}: rgba($background, $opacity);
+}
+
+@mixin rgba-cr($property, $color: transparent, $opacity: 1) {
+	#{$property}: rgba($color, $opacity);
+}
+
+@mixin brd-cr($property, $border-color: transparent, $opacity: 1) {
+	#{$property}: rgba($border-color, $opacity);
+}

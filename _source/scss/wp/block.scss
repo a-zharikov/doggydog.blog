@@ -1,0 +1,242 @@
+.wp-block {
+
+  &-quote {
+    margin: 0 200px 60px;
+    position: relative;
+
+    @include respond-to(laptop) {
+      font: 20px/32px $rsl-l;
+      margin: 0 100px 40px;
+    }
+
+    @include respond-to(mobile) {
+      margin: 0 30px 40px;
+    }
+
+    p {
+      color: $gray-black !important;
+      font: 22px/36px $rsl-li !important;
+      margin: 0 0 30px !important;
+
+      @include respond-to(laptop) {
+        font: 20px/32px $rsl-li !important;
+        margin: 0 0 20px !important;
+      }
+      
+      @include respond-to(mobile) {
+        font: 16px/26px $rsl-li !important;
+        margin: 0 0 20px !important;
+      }
+    }
+
+    cite {
+      width: 100%;
+      display: block;
+      text-align: right;
+      font: 16px/16px $rsl-li;
+
+      @include respond-to(mobile) {
+        font: 12px/22px $rsl-li;
+        margin-top: -10px;
+      }
+    }
+
+    &:before, &:after {
+      content: '';
+      font: 60px/0 $rsl-li;
+      color: $gray-light;
+      position: absolute;
+    }
+
+    &:before {
+      content: '“';
+      top: 24px;
+      left: -50px;
+
+      @include respond-to(mobile) {
+        top: 28px;
+        left: -35px;
+      }
+    }
+
+    &:after {
+      content: '”';
+      bottom: 23px;
+      right: -30px;
+
+      @include respond-to(mobile) {
+        bottom: 20px;
+        right: -20px;
+      }
+    }
+  }
+  
+  &-pullquote {
+    padding: 0;
+
+    blockquote {
+
+      p {
+        font: 24px/36px $rsl-li;
+
+        @include respond-to(laptop) {
+          font: 22px/32px $rsl-li;
+        }
+        
+        @include respond-to(mobile) {
+          font: 18px/26px $rsl-li;
+        }
+      }
+
+      &:before, &:after {
+        content: '';
+        width: 50%;
+        height: 3px;
+        display: block;
+        background: $blue;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      &:before, &:after {
+        margin-bottom: 60px;
+
+        @include respond-to(laptop) {
+          margin-bottom: 40px;
+        }
+        
+        @include respond-to(mobile) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &-code {
+    font: 16px/18px "Courier New", Courier;
+    border: 1px solid #e6e6e6;
+    padding: 4px 7px;
+    border-radius: 3px;
+    background: #f8f8f8;
+    margin: 0 200px 60px;
+    white-space: pre-wrap;
+
+    @include respond-to(laptop) {
+      margin: 0 100px 40px;
+    }
+    
+    @include respond-to(mobile) {
+      margin: 0 0 40px;
+    }
+  }
+}
+
+.page-page {
+
+  .nav {
+
+    &-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $gray-white;
+      padding: 40px 0;
+    }
+  
+    &-previous {
+      flex-basis: 50%;
+      font: 24px/26px $bn-b;
+      margin-right: 20px;
+      text-align: right;
+  
+      @include respond-to(mobile) {
+        flex-basis: 40%;
+        margin-right: 10px;
+        font: 20px/22px $bn-b;
+      }
+  
+      a {
+        color: $gray;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+  
+        &:before {
+          color: $gray !important;
+          content: '«';
+          font: 40px/0px $rsl-l;
+          margin: -15px 20px 0 0;
+          @include transition;
+        }
+  
+        @include respond-to(hover) {
+  
+          &:hover {
+            color: $black;
+            
+            &:before {
+              animation: arrowLeft 1200ms infinite;
+            }
+          }
+        }
+      }
+    }
+  
+    &-next {
+      flex-basis: 50%;
+      font: 24px/26px $bn-b;
+      margin-left: 20px;
+  
+      @include respond-to(mobile) {
+        flex-basis: 40%;
+        margin-right: 10px;
+        font: 20px/22px $bn-b;
+      }
+  
+      a {
+        color: $gray;
+        color: $gray;
+        display: flex;
+        align-items: center;
+  
+        &:after {
+          color: $gray !important;
+          content: '»';
+          font: 40px/0px $rsl-l;
+          margin: -15px 0 0 20px;
+        }
+  
+        @include respond-to(hover) {
+  
+          &:hover {
+            color: $black;
+            
+            &:after {
+              animation: arrowRight 1200ms infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.wpd {
+
+  &-rating {
+
+    &-value {
+
+      &:hover {
+        background-color: $blue !important;
+        border-color: $blue !important;
+      }
+    }
+
+    &-title {
+      font: 14px/14px $bn-b !important;
+    }
+  }
+}
+
+.screen-reader-text {display: none !important;}

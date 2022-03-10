@@ -1,0 +1,111 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo {
+
+    &-desktop {
+      border: none;
+      margin-top: 40px;
+
+      @include respond-to(laptop) {
+        margin-top: 30px;
+      }
+
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      border: none;
+      display: none;
+      margin-top: 20px;
+
+      @include respond-to(mobile) {
+        display: block;
+      }
+    }
+  }
+
+  nav {
+    margin-top: 45px;
+
+    @include respond-to(laptop) {
+      margin-top: 40px;
+    }
+
+    @include respond-to(mobile) {
+      margin-top: 25px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin-right: 20px;
+
+        a {
+          color: $gray-black;
+          font: 22px/22px $bn-b;
+          border-bottom: 2px solid $tr;
+
+          @include respond-to(hover) {
+            
+            &:hover {
+              border-color: $blue-light;
+            }
+          }
+
+          &[aria-current="page"] {
+            border-color: $blue;
+            color: $black;
+          }
+
+          &.current-menu-parent {
+
+            a {
+              color: $black;
+              border-color: $blue;
+            }
+          }
+
+          @include respond-to(mobile) {
+            font: 20px/20px $bn-b;
+          }
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &:before, &:after {
+      content: '';
+      width: 150px;
+      height: 2px;
+      display: block;
+      margin: 0 auto;
+      background: $gray-light;
+    }
+
+    &:before {
+      margin-bottom: 35px;
+
+      @include respond-to(mobile) {
+        margin-bottom: 16px;
+      }
+    }
+
+    &:after {
+      margin-top: 34px;
+
+      @include respond-to(mobile) {
+        margin-top: 14px;
+      }
+    }
+  }
+}

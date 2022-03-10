@@ -1,0 +1,103 @@
+@mixin zoom($width: 40px, $height: 40px, $top: 20px, $right: 20px, $bs: 20px) {
+  
+  &:before {
+    content: '';
+    width: $width;
+    height: $height;
+    display: block;
+    border-radius: 5px;
+    position: absolute;
+    top: $top;
+    right: $right;
+    z-index: 2;
+    background-image: url('images/svg/zoom.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: $bs;
+    opacity: 0;
+    @include rgba-bg(background-color, $black, .7);
+    @include transition;
+  }
+
+  @include respond-to(hover) {
+
+    &:hover {
+
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin zoomm($width-m: 40px, $height-m: 40px, $top-m: 20px, $right-m: 20px, $bs-m: 20px) {
+  
+  @include respond-to(mobile) {
+    &:before {
+      content: '';
+      width: $width-m;
+      height: $height-m;
+      display: block;
+      border-radius: 5px;
+      position: absolute;
+      top: $top-m;
+      right: $right-m;
+      z-index: 2;
+      background-image: url('images/svg/zoom.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: $bs-m;
+      opacity: 1;
+      @include rgba-bg(background-color, $black, .7);
+    }
+  }
+}
+
+@mixin video() {
+  &._video {
+
+    &:before {
+      content: '';
+      width: 60px;
+      height: 60px;
+      display: block;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      background-image: url('images/svg/play.svg');
+      background-position: 22px 18px;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      opacity: 1;
+      @include rgba-bg(background-color, $blue, .8);
+      @include transition;
+
+      @include respond-to(mobile) {
+        width: 40px;
+        height: 40px;
+        top: 50% !important;
+        left: 50% !important;
+        right: auto;
+        background-position: 16px 13px;
+        transform: translate(-50%, -50%);
+        background-size: 12px;
+        opacity: 1;
+      }
+    }
+
+    @include respond-to(hover) {
+
+      &:hover {
+        
+        &:before {
+          @include rgba-bg(background-color, $blue, 1);
+          animation: pulseVideo 1500ms infinite;
+        }
+      }
+    }
+  }
+}
